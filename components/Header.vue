@@ -34,7 +34,7 @@
         <span
           class="text-primary text-sm font-semibold bg-white rounded-full absolute flex px-1.5 -top-3 -left-3"
         >
-          0
+          {{ cartStore.totalQuantityAllProducts }}
         </span>
         <ShoppingCartIcon
           class="w-8 h-8 hover:bg-primary-lighten hover:text-secondary cursor-pointer rounded-full p-1 transition-all"
@@ -92,8 +92,9 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/vue/24/outline";
 import { Dialog, DialogPanel } from "@headlessui/vue";
+import { useCartStore } from "~/store/cartStore";
 
+const cartStore = useCartStore();
 const navigation = [{ name: "Products", href: "/products" }];
-
 const isMobileMenuShown = ref(false);
 </script>
