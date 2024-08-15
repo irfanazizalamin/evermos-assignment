@@ -15,7 +15,7 @@
         <button
           type="button"
           class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
-          @click="mobileMenuOpen = true"
+          @click="isMobileMenuShown = true"
         >
           <span class="sr-only">Toggle main menu</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
