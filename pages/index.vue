@@ -13,13 +13,13 @@
         <h1
           class="text-4xl font-semibold tracking-tight sm:text-6xl text-white"
         >
-          <div class="font-bold text-white">"ONLY TODAY"</div>
-          <p class="mt-4 text-2xl">you will get Special Price only in:</p>
+          <div class="font-bold text-white">ONLY TODAY</div>
+          <p class="mt-4 text-2xl">you will get Special Price until:</p>
         </h1>
         <ClientOnly>
           <div class="flex items-center justify-center">
             <div class="mt-5 text-white py-2 px-4 w-fit">
-              <h1 class="text-4xl font-bold">{{ formattedTime }}</h1>
+              <h1 class="text-xl md:text-4xl font-bold">{{ formattedTime }}</h1>
             </div>
           </div>
         </ClientOnly>
@@ -27,8 +27,9 @@
           <NuxtLink
             to="/products"
             class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primaryLighter focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-            >Lets Check Our Products</NuxtLink
           >
+            Lets Check Our Products
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -59,9 +60,9 @@ const calculateTimeRemaining = () => {
   minutes.value = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
   seconds.value = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-  formattedTime.value = `${String(hours.value).padStart(2, "0")}:${String(
-    minutes.value
-  ).padStart(2, "0")}:${String(seconds.value).padStart(2, "0")}`;
+  formattedTime.value = `${String(hours.value).padStart(2, "0")} Hours 
+    : ${String(minutes.value).padStart(2, "0")} Minutes 
+    : ${String(seconds.value).padStart(2, "0")} Seconds`;
 };
 
 let countdownInterval = null;
