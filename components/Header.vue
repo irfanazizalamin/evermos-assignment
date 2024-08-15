@@ -9,6 +9,7 @@
     <div class="flex items-center gap-5">
       <ShoppingCartIcon
         class="lg:hidden w-7 h-7 hover:bg-white hover:text-primary cursor-pointer rounded-full p-1 transition-all"
+        @click="emit('openCart')"
       />
       <div class="flex lg:hidden">
         <button
@@ -38,6 +39,7 @@
         </span>
         <ShoppingCartIcon
           class="w-8 h-8 hover:bg-primary-lighten hover:text-secondary cursor-pointer rounded-full p-1 transition-all"
+          @click="emit('openCart')"
         />
       </div>
     </div>
@@ -94,6 +96,7 @@ import {
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { useCartStore } from "~/store/cartStore";
 
+const emit = defineEmits(["openCart"]);
 const cartStore = useCartStore();
 const navigation = [{ name: "Products", href: "/products" }];
 const isMobileMenuShown = ref(false);
