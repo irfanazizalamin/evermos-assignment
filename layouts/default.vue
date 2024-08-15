@@ -1,13 +1,16 @@
 <template>
-  <header>
-    <div>Header</div>
+  <header class="bg-primary">
+    <Header />
   </header>
   <main>
     <slot />
   </main>
   <footer class="bg-primary">
-    <div>Footer</div>
+    <Footer />
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import Footer from '~/components/Footer.vue';
+import Header from '~/components/Header.vue';
+</script>
